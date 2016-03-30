@@ -13,11 +13,9 @@ namespace ViewModelTest.Model
         public string Place { get; set; }
 
         public DateTime DateTime { get; set; }
-        private static int _idcounter;
 
         public Event(string name, string description,string place, DateTime dateTime)
         {
-            Id = ++_idcounter;
             Name = name;
             Description = description;
             Place = place;

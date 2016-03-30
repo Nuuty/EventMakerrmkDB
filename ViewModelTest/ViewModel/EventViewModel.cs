@@ -16,30 +16,30 @@ namespace ViewModelTest.ViewModel
 {
     class EventViewModel : INotifyPropertyChanged
     {
-        private DateTimeOffset _date;
-        private TimeSpan _time;
+        private static DateTimeOffset _date;
+        private static TimeSpan _time;
         public EventCatalogSingleton Catalog { get; } = EventCatalogSingleton.Instance;
 
         public String Name
         {
             get { return _name; }
-            set { _name = value; OnPropertyChanged(); }
+            set { _name = value; }
         }
 
         public String Description
         {
             get { return _description; }
-            set { _description = value; OnPropertyChanged(); }
+            set { _description = value;  }
         }
 
-        public String Place
+        public  String Place
         {
             get { return _place; }
-            set { _place = value; OnPropertyChanged(); }
+            set { _place = value;  }
             
         }
 
-        private Event _selecteditem;
+        private static Event _selecteditem;
 
         public Event Selecteditem
         {
@@ -49,9 +49,9 @@ namespace ViewModelTest.ViewModel
 
         public Handler.EventHandler EventHandler { get; set; }
         private ICommand _createEventCommand;
-        private string _description;
-        private string _name;
-        private string _place;
+        private static string _description;
+        private static string _name;
+        private static string _place;
         private ICommand _deleteEventCommand;
         public ICommand CreateEventCommand
         {
@@ -70,16 +70,16 @@ namespace ViewModelTest.ViewModel
             
         }
 
-        public DateTimeOffset Date
+        public  DateTimeOffset Date
         {
             get { return _date; }
-            set { _date = value; OnPropertyChanged(); }
+            set { _date = value;  }
         }
 
-        public TimeSpan Time
+        public  TimeSpan Time
         {
             get { return _time; }
-            set { _time = value; OnPropertyChanged(); }
+            set { _time = value;  }
         }
 
         public EventViewModel()

@@ -23,9 +23,13 @@
             </Interactivity:Interaction.Behaviors>
         </AppBarButton>
         <Button x:Name="button" Content="Slet Event" HorizontalAlignment="Left" Margin="175,280,0,0" VerticalAlignment="Top" Command="{Binding DeleteEventCommand, Mode=OneWay}"/>
-        <Button x:Name="button1" Content="Ret" HorizontalAlignment="Left" Margin="670,243,0,0" VerticalAlignment="Top" Command="{Binding UpdateEventCommand, Mode=OneWay}"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="660,55,0,0" TextWrapping="Wrap" Text="{Binding Selecteditem.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Margin="660,110,0,0" TextWrapping="Wrap" Text="{Binding Selecteditem.Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Margin="659,165,0,0" TextWrapping="Wrap" Text="{Binding Selecteditem.Place, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
+        <Button x:Name="button1" Content="Ret" HorizontalAlignment="Left" Margin="670,243,0,0" VerticalAlignment="Top">
+            <Interactivity:Interaction.Behaviors>
+                <Core:EventTriggerBehavior EventName="Click">
+                    <Core:NavigateToPageAction TargetPage="ViewModelTest.View.EditEventPage"/>
+                </Core:EventTriggerBehavior>
+            </Interactivity:Interaction.Behaviors>
+        </Button>
+        <!--<Button x:Name="button1" Content="Ret" HorizontalAlignment="Left" Margin="670,243,0,0" VerticalAlignment="Top" Command="{Binding UpdateEventCommand, Mode=OneWay}"/>-->
     </Grid>
 </Page>

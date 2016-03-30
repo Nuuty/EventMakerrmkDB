@@ -35,6 +35,7 @@ namespace ViewModelTest.Handler
         public void UpdateEvent()
         {
             EventVM.Catalog.UpdateHotelAsync(EventVM.Selecteditem);
+            ((Frame)Window.Current.Content).Navigate(typeof(View.EventPage));
             EventVM.Catalog.Eventlist.Clear();
             EventVM.Catalog.LoadEventAsync();
         }
